@@ -28,8 +28,8 @@ Neste modo, o programa te mostra uma janela transparente com o seu avatar, e qua
 
 1. Abra a cena `cenas/live_puppet.tscn`;
 2. Clique no nó "LivePuppet" para configurar, no inspetor:
-  1. Qual microfone o avatar deve usar (clique no botão "Quais são meus microfones?" para ver uma lista de dispositivos na aba de Saída);
-  2. Qual o volume mínimo que o avatar deve detectar antes de abrir a boca. Se o seu microfone tiver ruído, coloque um valor maior.
+    1. Qual microfone o avatar deve usar (clique no botão "Quais são meus microfones?" para ver uma lista de dispositivos na aba de Saída);
+    2. Qual o volume mínimo que o avatar deve detectar antes de abrir a boca. Se o seu microfone tiver ruído, coloque um valor maior.
 3. Pra obter melhores resultados, você pode usar redução de ruído e compressão no OBS, monitorar a saída usando um cabo de áudio virtual, e colocar esse cabo virtual como o microfone usado pelo avatar.
 
 ## Lip sync
@@ -38,10 +38,10 @@ Neste modo, você coloca um áudio + transcrição, e o programa gera a animaç�
 
 1. Abra a cena `cenas/prerender_lipsync.tscn`;
 2. Clique no nó "Voice" para configurar, no inspetor:
-  1. A transcrição ("Transcript") do seu áudio. É muito importante colar aqui o texto completo do que o seu áudio diz, sem erros de digitação;
-  2. O seu áudio ("Stream"). Deve ser em formato WAV. Arraste o seu áudio para dentro da janela do Godot para importar o arquivo, e então arraste o arquivo de dentro do sistema de arquivos do Godot para o campo "Stream" do nó "Voice".
-  3. Para gerar a sincronização de lábios, execute o Docker Desktop e clique no botão "Gerar arquivo de lipsync". Pra isso funcionar, os dois campos acima devem estar preenchidos. Essa operação leva vários minutos, enquanto isso o programa vai travar, é só esperar;
-  4. Depois, abra o nó "AnimationPlayer" na aba Animação, abra a animação "go", e remova o clipe de áudio que está ali e troque pelo seu, arrastando o arquivo de áudio na timeline. Se a animação não for longa o suficiente para o áudio, pode estender ela. Essa animação representa o que será renderizado. Recomendo deixar 1 segundo de silêncio no início para que a boca atinja um estado neutro;
+    1. A transcrição ("Transcript") do seu áudio. É muito importante colar aqui o texto completo do que o seu áudio diz, sem erros de digitação;
+    2. O seu áudio ("Stream"). Deve ser em formato WAV. Arraste o seu áudio para dentro da janela do Godot para importar o arquivo, e então arraste o arquivo de dentro do sistema de arquivos do Godot para o campo "Stream" do nó "Voice".
+    3. Para gerar a sincronização de lábios, execute o Docker Desktop e clique no botão "Gerar arquivo de lipsync". Pra isso funcionar, os dois campos acima devem estar preenchidos. Essa operação leva vários minutos, enquanto isso o programa vai travar, é só esperar;
+    4. Depois, abra o nó "AnimationPlayer" na aba Animação, abra a animação "go", e remova o clipe de áudio que está ali e troque pelo seu, arrastando o arquivo de áudio na timeline. Se a animação não for longa o suficiente para o áudio, pode estender ela. Essa animação representa o que será renderizado. Recomendo deixar 1 segundo de silêncio no início para que a boca atinja um estado neutro;
 3. Se quiser renderizar uma animação de boca triste, clique no nó "LipSync" e marque a opção "Is Triste" no inspetor;
 4. Dê play na cena (F6) para ver se a sincronização ficou como você queria;
 5. Para renderizar os frames, clique no rolo de filme no canto superior direito para ativar o Modo Gravação, e execute a cena novamente, então espere;
