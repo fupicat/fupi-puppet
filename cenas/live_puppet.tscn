@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bomy3cb7ueit8"]
+
+[ext_resource type="Script" uid="uid://daupxugacq4rh" path="res://cenas/live_puppet.gd" id="1_g5jrl"]
+[ext_resource type="PackedScene" uid="uid://codj8psrcnyov" path="res://componentes/puppet/puppet.tscn" id="1_kd8kw"]
+[ext_resource type="PackedScene" uid="uid://6xy3iyaiutfb" path="res://componentes/generic_lip_sync.tscn" id="3_0xx0m"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_g5jrl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5jrl"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xx0m"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_neknm"]
+bg_color = Color(0.3366076, 0.33660764, 0.33660752, 1)
+
+[sub_resource type="Theme" id="Theme_g5jrl"]
+default_font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_g5jrl")
+Button/styles/normal = SubResource("StyleBoxFlat_0xx0m")
+Button/styles/pressed = SubResource("StyleBoxFlat_neknm")
+
+[node name="LivePuppet" type="Node2D" unique_id=1115481361]
+script = ExtResource("1_g5jrl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1029332788]
+visible = false
+offset_left = -1538.0
+offset_top = -1632.0
+offset_right = 1443.0
+offset_bottom = 89.0
+color = Color(0, 1.353256, 0, 1)
+
+[node name="Puppet" parent="." unique_id=391893078 instance=ExtResource("1_kd8kw")]
+position = Vector2(456, 0)
+
+[node name="LipSync" parent="Puppet/Root/Corpo/AnchorCabeça/CabecaNormal" parent_id_path=PackedInt32Array(391893078, 1251664172) index="1" unique_id=1320517915 instance=ExtResource("3_0xx0m")]
+position = Vector2(32, -155)
+scale = Vector2(0.5, 0.5)
+min_db = null
+
+[node name="Mic" type="AudioStreamPlayer" parent="." unique_id=177583491]
+stream = SubResource("AudioStreamMicrophone_g5jrl")
+volume_db = 5.0
+bus = &"LipSync"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=830622036]
+position = Vector2(-48, -771)
+zoom = Vector2(0.7, 0.7)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2046392651]
+offset_left = -1405.0
+offset_top = -1527.0
+offset_right = -730.0
+offset_bottom = -13.0
+theme = SubResource("Theme_g5jrl")
+
+[connection signal="comecou_a_falar" from="Puppet/Root/Corpo/AnchorCabeça/CabecaNormal/LipSync" to="." method="_on_lip_sync_comecou_a_falar"]
+[connection signal="terminou_de_falar" from="Puppet/Root/Corpo/AnchorCabeça/CabecaNormal/LipSync" to="." method="_on_lip_sync_terminou_de_falar"]
+
+[editable path="Puppet"]

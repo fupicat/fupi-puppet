@@ -1,0 +1,289 @@
+[gd_scene format=3 uid="uid://cnn3xgohd20h6"]
+
+[ext_resource type="Texture2D" uid="uid://c4ajdgsjn4ne8" path="res://componentes/bocas.png" id="1_ayq2m"]
+[ext_resource type="Script" uid="uid://dy22advhgut75" path="res://componentes/lip_sync.gd" id="1_tnqjy"]
+[ext_resource type="Script" uid="uid://bgjnoi64lqt2q" path="res://componentes/boca.gd" id="2_2qqvf"]
+[ext_resource type="Texture2D" uid="uid://cvgrnhmo4ghf4" path="res://componentes/puppet/olho_sorrindo_l.png" id="4_gx26r"]
+
+[node name="LipSync" type="Node2D" unique_id=1659116784 node_paths=PackedStringArray("boca_feliz", "boca_triste")]
+script = ExtResource("1_tnqjy")
+boca_feliz = NodePath("BocaFeliz")
+boca_triste = NodePath("BocaTriste")
+mouth_shape = "A"
+
+[node name="BocaFeliz" type="Node2D" parent="." unique_id=534121398]
+
+[node name="Generic" type="Node2D" parent="BocaFeliz" unique_id=1526261509 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("M"),
+0.1: NodePath("S"),
+0.3: NodePath("A")
+}
+
+[node name="M" type="Sprite2D" parent="BocaFeliz/Generic" unique_id=390144064]
+visible = false
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(29.565857, 169.14478, 433.1936, 164.46057)
+
+[node name="A" type="Sprite2D" parent="BocaFeliz/Generic" unique_id=775055783]
+position = Vector2(0, 72)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(516.9164, 24.725477, 415.0074, 346.06763)
+
+[node name="S" type="Sprite2D" parent="BocaFeliz/Generic" unique_id=1276842947]
+visible = false
+position = Vector2(0, 24)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(936.5266, 253.65797, 465.94922, 204.75117)
+
+[node name="M" type="Node2D" parent="BocaFeliz" unique_id=1276949012 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("M2"),
+0.2: NodePath("M")
+}
+
+[node name="M2" type="Sprite2D" parent="BocaFeliz/M" unique_id=968372710]
+visible = false
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(29.19634, 46.539886, 481.357, 120.39473)
+
+[node name="M" type="Sprite2D" parent="BocaFeliz/M" unique_id=827059754]
+visible = false
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(29.042208, 168.66035, 434.61908, 164.78844)
+
+[node name="A" type="Node2D" parent="BocaFeliz" unique_id=2052952948 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("A2"),
+0.35: NodePath("A")
+}
+
+[node name="A2" type="Sprite2D" parent="BocaFeliz/A" unique_id=119339640]
+visible = false
+position = Vector2(0, 40)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(970.76355, 24.118504, 455.21985, 229.40582)
+
+[node name="A" type="Sprite2D" parent="BocaFeliz/A" unique_id=1557309653]
+visible = false
+position = Vector2(0, 72)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(518.72485, 25.435223, 412.08496, 345.04144)
+
+[node name="O" type="Node2D" parent="BocaFeliz" unique_id=1366280321 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("O2"),
+0.35: NodePath("O")
+}
+
+[node name="O" type="Sprite2D" parent="BocaFeliz/O" unique_id=887046391]
+visible = false
+position = Vector2(0, 55.999996)
+scale = Vector2(0.7808219, 1.1449814)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1404.4534, 323.60297, 314.44324, 292.24615)
+
+[node name="O2" type="Sprite2D" parent="BocaFeliz/O" unique_id=1166090305]
+visible = false
+position = Vector2(0, 39.999992)
+scale = Vector2(1.0443038, 0.69178075)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1402.0938, 323.77124, 316.9193, 292.26263)
+
+[node name="U" type="Node2D" parent="BocaFeliz" unique_id=550913451 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("U2"),
+0.35: NodePath("U")
+}
+
+[node name="U" type="Sprite2D" parent="BocaFeliz/U" unique_id=1222113007]
+visible = false
+position = Vector2(168, 78)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1732.955, 395.44153, 167.72607, 174.4607)
+
+[node name="U2" type="Sprite2D" parent="BocaFeliz/U" unique_id=674765790]
+visible = false
+position = Vector2(99, 68)
+scale = Vector2(1.6666666, 0.6125828)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1732.534, 395.19397, 167.54688, 174.7934)
+
+[node name="S" type="Node2D" parent="BocaFeliz" unique_id=1053768763 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("S2"),
+0.5: NodePath("S")
+}
+
+[node name="S" type="Sprite2D" parent="BocaFeliz/S" unique_id=327667807]
+visible = false
+position = Vector2(0, 48)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1465.4915, 24.921694, 412.55432, 286.64508)
+
+[node name="S2" type="Sprite2D" parent="BocaFeliz/S" unique_id=223896753]
+visible = false
+position = Vector2(0, 32)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(936.8356, 254.35269, 464.9762, 203.07437)
+
+[node name="BocaTriste" type="Node2D" parent="." unique_id=62115927]
+visible = false
+
+[node name="Generic" type="Node2D" parent="BocaTriste" unique_id=2061267976 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("M"),
+0.1: NodePath("S"),
+0.3: NodePath("A")
+}
+
+[node name="M" type="Sprite2D" parent="BocaTriste/Generic" unique_id=1371626439]
+visible = false
+position = Vector2(64, 24)
+scale = Vector2(2, 2)
+texture = ExtResource("4_gx26r")
+region_rect = Rect2(31.206158, 354.6109, 452.14426, 107.81378)
+
+[node name="A" type="Sprite2D" parent="BocaTriste/Generic" unique_id=1822084699]
+position = Vector2(-88, 56)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(488.18964, 404.7253, 353.35748, 341.02542)
+
+[node name="S" type="Sprite2D" parent="BocaTriste/Generic" unique_id=2113583646]
+visible = false
+position = Vector2(-96, 8)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1174.2246, 690.5959, 398.9745, 165.68115)
+
+[node name="M" type="Node2D" parent="BocaTriste" unique_id=1022098926 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("M2"),
+0.2: NodePath("M")
+}
+
+[node name="M2" type="Sprite2D" parent="BocaTriste/M" unique_id=2008242141]
+visible = false
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(30.523293, 354.75433, 454.34827, 107.834625)
+
+[node name="M" type="Sprite2D" parent="BocaTriste/M" unique_id=1813150733]
+visible = false
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(62.168297, 471.7667, 388.70166, 133.83182)
+
+[node name="A" type="Node2D" parent="BocaTriste" unique_id=742281489 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("A2"),
+0.35: NodePath("A")
+}
+
+[node name="A2" type="Sprite2D" parent="BocaTriste/A" unique_id=677986076]
+visible = false
+position = Vector2(-82, 31)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(858.19214, 499.04132, 418.5056, 197.23285)
+
+[node name="A" type="Sprite2D" parent="BocaTriste/A" unique_id=344031904]
+visible = false
+position = Vector2(-85, 57)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(495.1707, 405.5402, 345.4575, 339.94418)
+
+[node name="O" type="Node2D" parent="BocaTriste" unique_id=1813202558 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("O2"),
+0.35: NodePath("O")
+}
+
+[node name="O" type="Sprite2D" parent="BocaTriste/O" unique_id=1446104195]
+visible = false
+position = Vector2(-79.99999, 55.999996)
+scale = Vector2(0.7808219, 1.1449814)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1404.4534, 323.60297, 314.44324, 292.24615)
+
+[node name="O2" type="Sprite2D" parent="BocaTriste/O" unique_id=1863146241]
+visible = false
+position = Vector2(-88, 39.999992)
+scale = Vector2(1.0273973, 0.8921933)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1402.0938, 323.77124, 316.9193, 292.26263)
+
+[node name="U" type="Node2D" parent="BocaTriste" unique_id=674217685 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("U2"),
+0.35: NodePath("U")
+}
+
+[node name="U" type="Sprite2D" parent="BocaTriste/U" unique_id=2089764114]
+visible = false
+position = Vector2(80, 78)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1732.955, 395.44153, 167.72607, 174.4607)
+
+[node name="U2" type="Sprite2D" parent="BocaTriste/U" unique_id=185451172]
+visible = false
+position = Vector2(19, 68.00001)
+scale = Vector2(1.6666666, 0.6125828)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1732.534, 395.19397, 167.54688, 174.7934)
+
+[node name="S" type="Node2D" parent="BocaTriste" unique_id=2010509508 node_paths=PackedStringArray("states")]
+script = ExtResource("2_2qqvf")
+states = {
+0.0: NodePath("S2"),
+0.5: NodePath("S")
+}
+
+[node name="S" type="Sprite2D" parent="BocaTriste/S" unique_id=496667648]
+visible = false
+position = Vector2(-88, 48)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1609.978, 610.8419, 299.6233, 223.643)
+
+[node name="S2" type="Sprite2D" parent="BocaTriste/S" unique_id=1100018235]
+visible = false
+position = Vector2(-96, 32)
+texture = ExtResource("1_ayq2m")
+region_enabled = true
+region_rect = Rect2(1174.5828, 691.08075, 397.52588, 164.66815)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1662608625]
+bus = &"LipSync"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

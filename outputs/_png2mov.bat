@@ -1,0 +1,1 @@
+ffmpeg -framerate 24 -start_number 0 -i puppet%%8d.png -i puppet.wav -c:v prores -pix_fmt yuva444p10le -c:a aac -map 0:v:0 -map 1:a:0 puppet.mov

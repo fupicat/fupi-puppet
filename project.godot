@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Puppet"
+run/main_scene="uid://bomy3cb7ueit8"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=30
+config/icon="uid://f313dc0700y"
+
+[audio]
+
+buses/default_bus_layout="uid://bb1hsbttq2y8w"
+driver/enable_input=true
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
+window/size/transparent=true
+window/stretch/mode="canvas_items"
+window/per_pixel_transparency/allowed=true
+
+[editor]
+
+movie_writer/movie_file="res://outputs/puppet.png"
+movie_writer/disable_vsync=true
+movie_writer/fps=24
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
