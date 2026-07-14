@@ -2,6 +2,8 @@
 
 Olá, esse é o projeto que eu uso para animar o meu avatar para os meus vídeos, shorts e livestreams! Sinta-se livre pra mudar os sprites, o código, o que você quiser, e usar nos seus próprios vídeos!
 
+![](print_pro_readme.png)
+
 Esse projeto tem 3 jeitos de usar:
 
 1. [Ao vivo -- para livestreams](#ao-vivo)
